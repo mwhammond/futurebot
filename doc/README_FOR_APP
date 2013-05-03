@@ -1,0 +1,24 @@
+Use this README file to introduce your application and point to useful places in the API for learning more.
+Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+model for posts
+
+title:string
+content:text
+contentSummary:text
+score:integer
+image:string
+link:string
+
+each comment belgons to one post, each post can have many comments
+
+
+
+
+# find new feeds()
+	# look at rails tutorial for google feeds
+
+# go to the page and extract paragraphs()
+	# using nokgiri
+
+# search paragraph for keyword and if exist save as as a post

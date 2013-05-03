@@ -1,0 +1,7 @@
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
+url = "http://www.telecoms.com/38436/lte-and-the-backhaul-challenge/"
+
+doc = "Nokogiri::HTML()"

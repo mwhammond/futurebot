@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>Contentsummary:</b>
+  <%= @post.contentSummary %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @post.score %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @post.image %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @post.link %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @post.tags.map {|t| t.name}.join(", ") %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+
+<h2>Add a comment</h2>
+<%= render "comments/form" %>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
