@@ -1,47 +1,30 @@
-class Getfeeds
+class Simple
 
-	require 'nokogiri'
-	require 'open-uri'
+	def self.buildContent
 
-
-
-
-	def self.verySimple
-		puts "nothing"
-	end
-
-def self.buildContent
-
-	puts "finding feeds to update"
+		puts "finding feeds to update"
 	### send urls from database to update_from_feed ####
 
 	# get urls from database
 	# each of these needs a lastChecked date object
-	Getfeeds.update_from_feed("http://www.wired.co.uk/rss") # change to multiple?
+	Simple.update_from_feed("http://www.wired.co.uk/rss") # change to multiple?
 	# returns value of last statement executed
 end
 
 
+	### get latest feeds and store in ##############
 
-
-
-### get latest feeds and store in ##############
-
-def self.update_from_feed(feed_url)
-	puts "pulling feeds"
+	def self.update_from_feed(feed_url)
+		puts "pulling feeds"
 	feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		# feed.last_modified - if it's been modified since last time
 		feed.entries.each do |entry|
 			# if the post occured after it was last checked
-			Getfeeds.find_keywords(entry.url)
+			#Getfeeds.find_keywords(entry.url)
 			puts entry.url
 			# call the keyword check and save on the actual post url	
 		end
-	end
-
-
-
-
+end
 
 
 ### scrape page and use regex to extract ########
@@ -59,8 +42,7 @@ end
 
 
 
+
+
 end
 
-#FeedEntry.update_from_feed("http://feeds.feedburner.com/railscasts")
-
-Getfeeds.verySimple

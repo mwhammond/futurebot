@@ -1,76 +1,60 @@
 desc "fetch paragraphs"
 task :fetch_para => :environment do
 
+require 'nokogiri'
+require 'open-uri'
 
-=begin
+result = buildContent
 
-	require 'nokogiri'
-	require 'open-uri'
+def buildContent
 
-	puts "scraping"
+	puts "finding feeds to update"
+	### send urls from database to update_from_feed ####
 
-	url = "http://www.telecoms.com/38436/lte-and-the-backhaul-challenge/"
-	doc = Nokogiri::HTML(open(url))
+	# get urls from database
+	# each of these needs a lastChecked date object
+	update_from_feed("http://www.wired.co.uk/rss") # change to multiple?
+	
+end
+
+
+
+
+
+### get latest feeds and store in ##############
+
+def update_from_feed(feed_url)
+		puts "pulling feeds"
+		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+		# feed.last_modified - if it's been modified since last time
+		feed.entries.each do |entry|
+			# if the post occured after it was last checked
+			find_keywords(entry.url)
+			puts entry.url
+			# call the keyword check and save on the actual post url	
+		end
+end
+
+
+
+
+
+
+### scrape page and use regex to extract ########
+
+def find_keywords(feedEntryUrl)
+	puts "extracting keywords"
+	doc = Nokogiri::HTML(open(feedEntryUrl))
 	doc.css("p").each do |para|
-		# look for keywords and extract sentence
+		# regex on para if true extract and save
+		# for now just save the p tags
 		Post.create!(:title => "test",:content => "test",:contentSummary => para.text,:score => 1, :image => "radio.jpg",:link => "www.google.com")
 	end
-end
-
-# dynamic url:  url = "http://www.walmart.com/search/search-ng.do?search_constraint=0&ic=48_0&search_query=#{CGI.escape(product.name)}&Find.x=0&Find.y=0&Find=Find"
-
-def findKeywords(para)
-	keyword="challenge" # change to array and 'do' later
-	reKeyword = new RegExp(keyword,"g")
-	reDots = /[\.\?\!]/g;
-
-	
-	# find index of keyword - deal with multiple occurences later
-		#indexOfKeyword=findInPara(re)
-	# find the start and end of setences
-	# put the setence between start and finish in a var
-		# fullSentence=extractSentences(indexKeywords[i],endOfSentences,para);
-	# save to database
 
 end
 
-#################### old code
 
-# call using methodName 25,30
-
+end # rakefile
 
 
 
-// functions ///////////////////////////////////////////
-
-// finds multiple occurences of something in a para using regex
-function findInPara(re) {
-	things=[];
-	while ((match = re.exec(para)) != null) {
-	things.push(match.index);
-    //console.log("match at " + match.index);
-	}
-	return things; 
-} // findInPara
-
-
-function extractSentences(indexKeywords,endOfSentences,para) {
-# i.e. find the stop before and after keyword
-
-	// find the sentence end before the word
-	var stopBefore = _.filter(endOfSentences, function(num){ return num<indexKeywords; });
-	stopBefore=Math.max.apply(Math, stopBefore);
-
-	// find the sentence end after the word	
-	var stopAfter = _.filter(endOfSentences, function(num){ return num>indexKeywords; });
-	stopAfter=Math.min.apply(Math, stopAfter);
-
-	//console.log('Stop before: '+stopBefore+ ', stop after:' +stopAfter)
-
-	return para.substring(stopBefore+2,stopAfter);
-
-} // extract sentences
-=end
-
-
-end

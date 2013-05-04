@@ -12,6 +12,7 @@ class FeedEntry <ActiveRecord::Base
 					:published_date => entry.published,
 					:guid => entry.id
 					)		
+				puts entry.title
 			end
 		end
 	end

@@ -1,8 +1,9 @@
 <div id="feeds">
   <h3>Feeds!</h3>
   <ul>
-  <% for entry in FeedEntry.all(:limit => 10, :order => "published_date desc") %>
+  <% for entry in FeedEntry.all(:limit => 50, :order => "published_date desc") %>
     <li><%= link_to h(entry.name), entry.url %></li>
+    <p><%= entry.summary%></p>
   <% end %>
   </ul>
 </div>
