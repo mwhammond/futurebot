@@ -1,0 +1,2 @@
+class FeedEntryController < ApplicationController
+end

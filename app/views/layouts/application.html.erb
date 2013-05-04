@@ -96,43 +96,28 @@
     <div class="large-10 columns push-two">
 
 
+
+
       <div class="row" id="descriptionpanel">
 
 
-          <div class="large-7 columns" id="introduction">
+          <div class="large-10 columns" id="introduction">
 
-            <h1><%= yield(:title) %></h1>
 
             <p class="show-for-small"><a href="index.php">&larr; Back to Home</a></p>
-            <h2>A hidden goldmine</h2>
-            <h4 class="subheader">How to get started</h4>
+           
 
-            <p>If you want to escape the corperate grind and start a company ideas can be hard to find, it feels like everything has been done and it's impossible to predict which fad app will be the next big thing. The key ingredient to real entrepreneurship is solving a pressing problem, here we cut out the serindipity and highlight hundreds of opportunties across a range of industries as they're mentioned.
-
-            <!--  -->
-          </div>
-
-
+ <%= yield %>
 
         <div class="large-4 large-offset-1 columns" id="advertblock">
           
           <div class="row">
             <br> 
           
-            <h5>Get the weekly idea update</h5>
 
-            <form>
-      <div class="row collapse">
-        <div class="small-9 columns">
-          <input type="text" placeholder="Enter email">
-        </div>
-        <div class="small-3 columns">
-          <a href="#" class="button prefix">Go!</a>
-        </div>
-      </div>
-            </form>
+  
+
            
-          </div>
 
 
          </div>
@@ -143,12 +128,14 @@
          <!--  repeating grid. The columsn are filled in dynamically using
          the template at the bottom--> 
 
+
+
         <ul class="small-block-grid-2 large-block-grid-4">
 
         <li>
           <div class="line1" id="line1"></div><!-- column1 -->
 
-<%= yield %>
+
 
 
 

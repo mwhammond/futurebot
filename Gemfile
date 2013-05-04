@@ -24,6 +24,7 @@ group :assets do
   gem 'zurb-foundation', '~> 4.0.0'
   gem 'uglifier', '>= 1.2.3'
   gem 'nokogiri'
+  gem 'feedzirra'
 end
 
 gem 'jquery-rails', '2.0.2'

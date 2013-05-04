@@ -1,0 +1,1 @@
+FeedEntry.update_from_feed("http://feeds.feedburner.com/railscasts")
