@@ -1,6 +1,8 @@
 desc "fetch feeds"
 task :fetch_feeds => :environment do
 
+Post.delete_all # REMOVE IN PRODUCTION, CLEARS DATABASE!
+
 require 'nokogiri'
 require 'open-uri'
 require 'feedzirra'
