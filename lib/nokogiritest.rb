@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require 'feedzirra'
 
 url = "http://www.telecoms.com/38436/lte-and-the-backhaul-challenge/"
 
@@ -30,5 +31,6 @@ end
 	puts para2.scan(/[\S*\s*{1,10}*.\.\?\!]/m)
 	# precediing item optional =?
 	# repeats the previous item zero or more times *
+	# [\.\?\!].*\bkeyword\b[\.\?\!]
 
 puts "done."

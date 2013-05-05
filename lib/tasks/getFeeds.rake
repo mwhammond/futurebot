@@ -3,7 +3,7 @@ task :fetch_feeds => :environment do
 
 require 'nokogiri'
 require 'open-uri'
-require 'Feedzirra'
+require 'feedzirra'
 
 require 'simple.rb' # this runs the helper file that scrapes and saves, possibly not the best way!
 
