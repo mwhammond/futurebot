@@ -4,6 +4,11 @@ Futurebot::Application.routes.draw do
   end
 resources :feed_entry
 
+resources :posts do
+       member do
+         post 'delete'
+  end
+end
 
 
   #get "home/index"

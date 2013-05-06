@@ -9,7 +9,9 @@ CharacterFollow = 30;
 
 	# get urls from database
 	# each of these needs a lastChecked date object
-	update_from_feed("http://feeds.feedburner.com/TechCrunch/") # change to multiple?
+	#update_from_feed("http://feeds.feedburner.com/TechCrunch/") # change to multiple?
+	update_from_feed("www.telecoms.com/search/rss/feed/rss2/")
+
 	# returns value of last statement executed
 end
 
@@ -47,12 +49,12 @@ def find_keywords(feedEntryUrl)
 	# CHANGE TO DYNAMIC KEYWORD! 
 	# AND FIX PLURALS! - put them all in with an 'or'?
 
-	positions = paraString.enum_for(:scan, /\bGlass\b|\bglass[s]/).map { Regexp.last_match.begin(0) }
+	positions = paraString.enum_for(:scan, /\bopportunity\b|\bchallenge\b/).map { Regexp.last_match.begin(0) }
 	dots = paraString.enum_for(:scan, /[\.\?\!]/).map { Regexp.last_match.begin(0) }
 
 	# find the end of a sentence immediatly before a keyword
 	
-	if dots.length >3 # maybe check that it's not a title by having a few fullstops in a P
+	if dots.length >=1 # maybe check that it's not a title by having a few fullstops in a P
 
 	positions.each do |position|
 		puts "dots"

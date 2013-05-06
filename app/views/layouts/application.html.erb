@@ -4,160 +4,138 @@
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-  <head>
-  	<meta charset="utf-8" />
+<head>
+ <meta charset="utf-8" />
 
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+ <!-- Uncomment to make IE8 render like IE7 -->
+ <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- Set the viewport width to device width for mobile -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+ <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= csrf_meta_tags %>
-
-    
-  </head>
-
-  <body>
-
-    <div class="fixed">
-<nav class="top-bar">
-
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="#">realent</a></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+ <%= stylesheet_link_tag    "application" %>
+ <%= javascript_include_tag "vendor/custom.modernizr" %>
+ <%= csrf_meta_tags %>
 
 
-  <section class="top-bar-section">
+</head>
 
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="divider hide-for-small"></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </section>
-</nav>
-</div>
+<body>
+
+
+  <div class="fixed">
+    <nav class="top-bar">
+
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="#">futurebot</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+
+      <section class="top-bar-section">
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="divider hide-for-small"></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </section>
+    </nav>
+
+
+
+
 
   <header>
+
     <div class="row">
+
       <div class="twelve columns">
-        <h1>Future bot</h1>
-        <h4>Forget photo apps, be a man, solve real problems.</h4>
+
+      <div class="large-1 columns top topone">
+        <%= image_tag "/images/lab.png" %>
       </div>
+
+      <div class="large-1 columns top toptwo">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topthree" >
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topfour">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+
+      <div class="large-1 columns top topfive">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topsix">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topseven">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topeight">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+
+      <div class="large-1 columns top topnine">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topten">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top topeleven">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+      <div class="large-1 columns top toptwelve">
+        <%= image_tag "/images/lab.png" %>
+      </div>
+
+
+    </div>
     </div>
   </header>
 
- 
-  <header class="gray">
-    <div class="row">
-      <div class="twelve columns">
-        <h6>Perhaps you could solve the <a href="#">bandwidth challenge </a> or improve <a href="#">medication adherence</a>...</h6>
-      </div>
-    </div>
-  </header>
+   </div> <!-- fixed -->
+
+<section id="main">
 
 
-<section id="mainContent">
+
   <div class="row">
+            <br>
+        <br>
+        <br>
+    <div class="twelve columns">
+    <div class="large-12 large-centered columns mainContent">
 
+      <div class="row">
 
-    <div class="large-2 columns push-ten">
-
-          <ul class="side-nav">
-          <li class="active"><a href="index.html">&larr; Home</a></li>
-          <li class="divider"></li>
-          <li onclick="adminMode()"><a>Admin Mode</a></li>
-          <li onclick="topQuotes()"><a>Top Challenges</a></li>
-          <li onclick="justSpottedQuotes()"><a>Just spotted</a></li>
-          <br>
-          <li class="divider"></li>
-          <li><p>Verticals</p></li>
-          <li><a href="#">Telecoms</a></li>
-          <li><a href="#">Retail</a></li>
-          <li><a href="#">Media</a></li>
-          <li><a href="#">Healthcare</a></li>
-          <li><a href="#">Consumer</a></li>
-
-        </ul>
-
-    </div>
-
-    <div class="large-10 columns push-two">
-
-
-
-
-      <div class="row" id="descriptionpanel">
-
-
-          <div class="large-10 columns" id="introduction">
-
-
-            <p class="show-for-small"><a href="index.php">&larr; Back to Home</a></p>
-           
-
- <%= yield %>
-
-        <div class="large-4 large-offset-1 columns" id="advertblock">
-          
-          <div class="row">
-            <br> 
-          
-
-  
-
-           
-
-
-         </div>
-
-
-        <div class="large-12 columns">
-
-         <!--  repeating grid. The columsn are filled in dynamically using
-         the template at the bottom--> 
-
-
-
-        <ul class="small-block-grid-2 large-block-grid-4">
-
-        <li>
-          <div class="line1" id="line1"></div><!-- column1 -->
-
-
-
-
-
-
-        </li>
-        <li>
-          <div class="line1" id="line2"></div><!-- column1 -->
-        </li>
-        <li>
-          <div class="line1" id="line3"></div><!-- column1 -->
-        </li>
-        <li>
-          <div class="line1" id="line4"></div><!-- column1 -->
-        </li>
-        </ul>
-          
-      </div> <!--  repeating grid --> 
-
-    </div>
-
+        <div class="large-6 columns"><%= yield %></div>
+        <div class="large-3 large-offset-1 columns"><br><br>Latest comments</div>
+      </div>
     </div>
   </div>
+  </div>
+
 </section>
 
 
@@ -167,15 +145,15 @@
 
 
 <div id="myModal" class="reveal-modal">
-   <h1>Modal Title</h1>
-   <p>Any content could go in here.</p>
-   <a class="close-reveal-modal">&#215;</a>
+ <h1>Modal Title</h1>
+ <p>Any content could go in here.</p>
+ <a class="close-reveal-modal">&#215;</a>
 </div>
 
 
-    
 
-    
-    <%= javascript_include_tag "application" %>
-  </body>
+
+
+<%= javascript_include_tag "application" %>
+</body>
 </html>
