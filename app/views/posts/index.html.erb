@@ -4,12 +4,12 @@
 
 <div class="opbox">
    <!-- <img src="images/radio.jpg" alt=""> -->
-      <h5>Field</h5>
+      <h4>"<h4>
        <p><%= post.contentSummary %><b><%= link_to 'find out more', post %></b></p>
 
         <div class="controlpannel">
-        <%= image_tag "/images/arrow-up.png" %>
-        <%= image_tag "/images/arrow-down.png" %>
+        <%= link_to image_tag("/images/arrow-up.png"), post, :method => :upVote %>
+        <%= link_to image_tag("/images/arrow-down.png"), post, :method => :downVote %>
         <%= link_to image_tag("/images/remove.png"), post, :method => :delete %>
 
         

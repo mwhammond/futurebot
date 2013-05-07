@@ -69,6 +69,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def upVote
+    @post = Post.find(params[:id])
+    @post.increment!(:score)
+    format.html { redirect_to posts_url }
+    format.json { head :no_content }
+  end
+
+
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy

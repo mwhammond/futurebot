@@ -7,6 +7,7 @@ resources :feed_entry
 resources :posts do
        member do
          post 'delete'
+         post 'upVote'
   end
 end
 
