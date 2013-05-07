@@ -9,8 +9,11 @@ CharacterFollow = 30;
 
 	# get urls from database
 	# each of these needs a lastChecked date object
-	#update_from_feed("http://feeds.feedburner.com/TechCrunch/") # change to multiple?
-	update_from_feed("www.telecoms.com/search/rss/feed/rss2/")
+	update_from_feed("http://feeds.feedburner.com/TechCrunch/") # change to multiple?
+	update_from_feed("http://www.telecoms.com/search/rss/feed/rss2/")
+	update_from_feed("http://www.mckinsey.com/Insights/rss.aspx")
+	#update_from_feed("http://bits.blogs.nytimes.com/feed/")
+	#update_from_feed("http://www.businessweek.com/feeds/homepage.rss")
 
 	# returns value of last statement executed
 end
@@ -23,6 +26,8 @@ end
 		puts "pulling feeds"
 		puts feed_url
 		# add something to handle if it doesn't work
+		# CHECK FOR AND REMOVE SPECIAL CHARACTERS
+
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		puts feed.title
 		# feed.last_modified - if it's been modified since last time
