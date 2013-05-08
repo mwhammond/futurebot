@@ -14,8 +14,8 @@
 
 
 
-    <%= link_to "up: ", :action => 'upVote', :id => post.id %>
-    <%= link_to "down: ", :action => 'downVote', :id => post.id %>
+    <%= link_to "up", :method => "post", :action => 'up_vote', :id => post.id %>
+    <%= link_to "down", :method => "post", :action => 'down_vote', :id => post.id %>
 
         <%= link_to image_tag("/images/arrow-up.png"), post, :method => :delete %>
         <%= link_to image_tag("/images/arrow-down.png"), post, :method => :delete %>

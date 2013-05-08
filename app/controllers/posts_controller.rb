@@ -70,7 +70,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def upVote
+  def up_vote
     @post = Post.find(params[:id])
     if @post.increment!(:score)
     respond_to do |format|
@@ -80,7 +80,7 @@ class PostsController < ApplicationController
     end
   end
 
-    def downVote
+    def down_vote
     @post = Post.find(params[:id])
     if @post.decrement!(:score)
     respond_to do |format|
