@@ -1,5 +1,7 @@
 
 
+
+
 <% @posts.each do |post| %>
 
 <div class="opbox">
@@ -12,17 +14,23 @@
 
 
 
-        <%= link_to image_tag("/images/arrow-up.png"), post, :method => :upVote  %>
-        <%= link_to image_tag("/images/arrow-down.png"), post, :method => :downVote  %>
-        <%= link_to image_tag("/images/remove.png"), post, :method => :delete %>
+    <%= link_to "up: ", :action => 'upVote', :id => post.id %>
+    <%= link_to "down: ", :action => 'downVote', :id => post.id %>
 
-        
+        <%= link_to image_tag("/images/arrow-up.png"), post, :method => :delete %>
+        <%= link_to image_tag("/images/arrow-down.png"), post, :method => :delete %>
+        <%= link_to image_tag("/images/remove.png"), post, :method => :delete %>
+ 
         </div>
 
         </div>
 
 
 <% end %>
+
+
+
+
 
 
 

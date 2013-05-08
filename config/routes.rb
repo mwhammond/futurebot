@@ -10,17 +10,18 @@ resources :feed_entry
 
 resources :posts do
        member do
-         get 'delete'
-         get 'upVote'
+         post 'delete'
+         post 'upVote'
          post 'downVote'
   end
 end
 
 #match ':posts/:downVote/:id', :controller => 'posts', :action => 'downVote'
-#match ':posts/:upVote/:id', :controller => 'posts', :action => 'upVote'
+match ':posts/:id/:upVote', :controller => 'posts', :action => 'upVote'
+match ':posts/:id/:downVote', :controller => 'posts', :action => 'downVote'
 
-match '/upVote' => 'posts#upVote', :as => :upVote
-match '/downVote' => 'posts#downVote', :as => :downVote
+#match '/upVote' => 'posts#upVote', :as => :upVote
+#match '/downVote' => 'posts#downVote', :as => :downVote
 
   #get "home/index"
 
