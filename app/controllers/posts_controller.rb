@@ -71,9 +71,22 @@ class PostsController < ApplicationController
 
   def upVote
     @post = Post.find(params[:id])
-    @post.increment!(:score)
-    format.html { redirect_to posts_url }
-    format.json { head :no_content }
+    if @post.increment!(:score)
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.json { head :no_content }
+      end
+    end
+  end
+
+    def downVote
+    @post = Post.find(params[:id])
+    if @post.decrement!(:score)
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.json { head :no_content }
+      end
+    end
   end
 
 

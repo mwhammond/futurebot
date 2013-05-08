@@ -1,4 +1,4 @@
-<% @post.tags.build %>
+<!-- <% @post.tags.build %> -->
 
 <%= form_for(@post) do |post_form| %>
   <% if @post.errors.any? %>
@@ -38,8 +38,7 @@
     <%= post_form.text_field :link %>
   </div>
 
-  <%= render :partial => 'tags/form',
-            :locals => {:form => post_form} %>
+  <!-- <%= render :partial => 'tags/form',  :locals => {:form => post_form} %> -->
 
   <div class="actions">
     <%= post_form.submit %>

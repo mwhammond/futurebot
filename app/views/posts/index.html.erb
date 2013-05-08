@@ -4,18 +4,19 @@
 
 <div class="opbox">
    <!-- <img src="images/radio.jpg" alt=""> -->
-      <h4>"<h4>
+      <h4>"  <h4>
        <p><%= post.contentSummary %><b><%= link_to 'find out more', post %></b></p>
 
         <div class="controlpannel">
-        <%= link_to image_tag("/images/arrow-up.png"), post, :method => :upVote %>
-        <%= link_to image_tag("/images/arrow-down.png"), post, :method => :downVote %>
+         <h4> <%= post.score %> </h4>
+
+
+
+        <%= link_to image_tag("/images/arrow-up.png"), post, :method => :upVote  %>
+        <%= link_to image_tag("/images/arrow-down.png"), post, :method => :downVote  %>
         <%= link_to image_tag("/images/remove.png"), post, :method => :delete %>
 
         
-        <!-- works but doens't update
-        <%= link_to "Delete post", post, remote: true, method: :delete %>
-      -->
         </div>
 
         </div>

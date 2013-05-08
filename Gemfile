@@ -19,7 +19,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '3.2.5'
+  gem 'sass-rails',   '3.2.6'
   gem 'coffee-rails', '3.2.2'
   gem 'zurb-foundation', '~> 4.0.0'
   gem 'uglifier', '>= 1.2.3'

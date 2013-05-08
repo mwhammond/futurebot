@@ -2,15 +2,25 @@ Futurebot::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+
+
+
 resources :feed_entry
 
 resources :posts do
        member do
-         post 'delete'
-         post 'upVote'
+         get 'delete'
+         get 'upVote'
+         post 'downVote'
   end
 end
 
+#match ':posts/:downVote/:id', :controller => 'posts', :action => 'downVote'
+#match ':posts/:upVote/:id', :controller => 'posts', :action => 'upVote'
+
+match '/upVote' => 'posts#upVote', :as => :upVote
+match '/downVote' => 'posts#downVote', :as => :downVote
 
   #get "home/index"
 
@@ -26,6 +36,8 @@ end
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
