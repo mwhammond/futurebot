@@ -16,16 +16,9 @@ resources :posts do
   end
 end
 
-resources :post do
-       member do
-         post 'delete'
-         post 'up_vote'
-         post 'down_vote'
-  end
-end
 
-match ':posts/:id/up_vote/' => "post#up_vote"
-match ':posts/:id/down_vote/' => "post#down_vote"
+match ':posts/:id/up_vote/' => "posts#up_vote"
+match ':posts/:id/down_vote/' => "posts#down_vote"
 
 #match ':posts/:downVote/:id', :controller => 'posts', :action => 'downVote'
 #match ':posts/:id/:upVote', :controller => 'posts', :action => 'upVote'
