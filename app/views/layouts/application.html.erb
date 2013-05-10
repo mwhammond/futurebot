@@ -50,7 +50,7 @@
     </nav>
 
 
-
+ </div> <!-- fixed -->
 
 
   <header>
@@ -114,23 +114,43 @@
     </div>
   </header>
 
-   </div> <!-- fixed -->
+  
 
 <section id="main">
 
 
 
   <div class="row">
-            <br>
-        <br>
-        <br>
+
     <div class="twelve columns">
     <div class="large-12 large-centered columns mainContent">
 
       <div class="row">
 
-        <div class="large-6 columns"><%= yield %></div>
-        <div class="large-3 large-offset-1 columns"><br><br>Latest comments</div>
+<div class="large-3 columns">
+
+            <br>
+
+<ul class="side-nav">
+  <li><a href="#">Top rated</a></li>
+  <li><a href="#">Just found</a></li>
+  <li><a href="#">Most discussed</a></li>
+  <li class="divider"></li>
+  <li><a href="#">Health</a></li>
+  <li><a href="#">Energy</a></li>
+  <li><a href="#">Digital</a></li>
+  <li><a href="#">Retail</a></li>
+  <li><a href="#">Enterprise</a></li>
+  <li><a href="#">Transport</a></li>
+
+
+</ul>
+        </div>
+
+        <div class="large-8 large-offset-1 columns"><%= yield %></div>
+        
+
+
       </div>
     </div>
   </div>
