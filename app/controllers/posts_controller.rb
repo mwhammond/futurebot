@@ -100,6 +100,16 @@ class PostsController < ApplicationController
     end
   end
 
+    def junk
+    @post = Post.find(params[:id])
+    if @post.update_attribute(:score, 0)
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.json { head :no_content }
+      end
+    end
+  end
+
 
   # DELETE /posts/1
   # DELETE /posts/1.json
