@@ -3,13 +3,23 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
    # @posts = Post.all
-   @posts = Post.where("score >= ?", 1).order("score DESC").limit(20)
+
+ case params[:view]
+  when 'top'
+    @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
+  when 'new'
+    @posts = Post.where("score <= ?", 1).order("score DESC").limit(100)
+  else
+    @posts = Post.where("score >= ?", 1).order("score DESC").limit(100)
+  end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
     end
   end
+
+  # PROBABLY BEST TO HAVE A SEPERATE INDEX TO FIND BY TAG
 
   # GET /posts/1
   # GET /posts/1.json
