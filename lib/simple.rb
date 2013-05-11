@@ -2,24 +2,10 @@
 
 CharacterFollow = 30;
 
-RetailLinks = ["http://feeds.feedburner.com/ShopBlog?format=xml/"]
+RetailLinks = ["http://www.telecoms.com/feed/"]
+Sector = ["telecoms"]
 
-	def buildContent
 
-	puts "finding feeds to update"
-	### send urls from database to update_from_feed ####
-
-	# get urls from database
-	# each of these needs a lastChecked date object
-
-	RetailLinks.each do |link|
-
-	update_from_feed(link)
-
-	end
-
-	# returns value of last statement executed
-end
 
 
 
@@ -57,7 +43,7 @@ def find_keywords(feedEntryUrl)
 	# CHANGE TO DYNAMIC KEYWORD! 
 	# AND FIX PLURALS! - put them all in with an 'or'?
 
-	positions = paraString.enum_for(:scan, /\bopportunity\b|\bchallenge\b/).map { Regexp.last_match.begin(0) }
+	positions = paraString.enum_for(:scan, /\bdata\b/).map { Regexp.last_match.begin(0) }
 	dots = paraString.enum_for(:scan, /[\.\?\!]/).map { Regexp.last_match.begin(0) }
 
 	# find the end of a sentence immediatly before a keyword
@@ -65,23 +51,16 @@ def find_keywords(feedEntryUrl)
 	if dots.length >=1 # maybe check that it's not a title by having a few fullstops in a P
 
 	positions.each do |position|
-		puts "dots"
-		puts dots
-		puts "position"
-		puts position
-		puts "paraString"
-		puts paraString 
 
 		dotBefore = dots.find_all {|i| i< position}.max
 		dotBefore=-2 if dotBefore.nil? # start of string if no punctuation before
 		# if it's the last sentence we might actually want to go back one
-		puts "dots before"
-		puts dotBefore
 
-		puts "final string"
 		result = paraString[dotBefore+2, position+CharacterFollow]+"..."
 
-		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl) 
+		puts paraString
+		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl, :tags => "telecoms") 
+	
 	end #each
 
 	end #if a few sentences
@@ -94,6 +73,9 @@ def find_keywords(feedEntryUrl)
 end
 
 
-puts buildContent
+
+RetailLinks.each do |link|
+	update_from_feed(link)
+end
 
 #end #class

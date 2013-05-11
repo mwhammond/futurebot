@@ -6,11 +6,11 @@
 
 <div class="opbox">
    <!-- <img src="images/radio.jpg" alt=""> -->
-      <h4>"  <h4>
+      <h4>" <h4>
        <p><%= post.contentSummary %><b><%= link_to 'find out more', post %></b></p>
-
+       <p><%= post.link[10,15]%>...</p>
         <div class="controlpannel">
-         <h4> <%= post.score %> </h4>
+         <p><%= post.tags %> <%= post.score %> </p>
 
 
 

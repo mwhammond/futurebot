@@ -54,14 +54,10 @@
  </div> <!-- fixed -->
 
 
-<br>
-<br>
-
   
 
 <section id="main">
 
-<br>
 
   <div class="row">
 
@@ -73,11 +69,9 @@
 <div class="large-2 large-offset-1 columns">
 
 <br>
-<br>
-
 <ul class="side-nav">
-  <li><a href="#">Top rated</a></li>
-  <li><a href="#">Just found</a></li>
+  <li><%= link_to "Top", posts_path(view: "top") %></li>
+  <li><%= link_to "Just found", posts_path(view: "new") %></li>
   <li><a href="#">Most discussed</a></li>
   <li class="divider"></li>
   <li><a href="#">Health</a></li>
