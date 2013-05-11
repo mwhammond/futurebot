@@ -10,15 +10,16 @@ resources :feed_entry
 
 resources :posts do
        member do
-         post 'delete'
          post 'up_vote'
          post 'down_vote'
+         post 'junk'
   end
 end
 
 
 match ':posts/:id/up_vote/' => "posts#up_vote"
 match ':posts/:id/down_vote/' => "posts#down_vote"
+match ':posts/:id/junk/' => "posts#junk"
 
 #match ':posts/:downVote/:id', :controller => 'posts', :action => 'downVote'
 #match ':posts/:id/:upVote', :controller => 'posts', :action => 'upVote'

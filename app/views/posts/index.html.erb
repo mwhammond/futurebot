@@ -16,7 +16,8 @@
 
     <%= link_to image_tag("/images/arrow-up.png"), :method => "post", :action => 'up_vote', :id => post.id %>
     <%= link_to image_tag("/images/arrow-down.png"), :method => "post", :action => 'down_vote', :id => post.id %>
-    <%= link_to image_tag("/images/remove.png"), post, :method => :delete %>
+    <%= link_to image_tag("/images/remove.png"), :method => "post", :action => 'junk', :id => post.id %>
+
  
         </div>
 
