@@ -18,9 +18,6 @@
   <%= link_to "Read full article", @post.link %>
 </p>
 
-<p>
-  <%= @post.tags.map {|t| t.name}.join(", ") %>
-</p>
 
 <h5>Comments</h5>
 <%= render @post.comments %>

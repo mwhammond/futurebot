@@ -1,0 +1,5 @@
+<ul>
+<% @posts.each do |post| %>
+ <li><%= link_to post.contentSummary, :action => 'show', :id => post.id  %></li>
+<% end %>
+</ul>

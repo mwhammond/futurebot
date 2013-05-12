@@ -7,16 +7,14 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; lin
 
 body
 {
-background-color: #eae8e0;  
+background-color: #e0e1e2; 
 /*background-image:url('images/debut_light.png'); 
 background-repeat:repeat-y; */
 }
 
 
 
-.opbox {padding: 15px;
-font-size: 12px;
-}
+
 
 /*
 a { cursor: pointer; color: blue; }
@@ -26,26 +24,10 @@ without doing javascriptVoid or linking to nothing*/
 
 
 
-.opboxspacer {padding-top: 40px;}
-
-.mainContent {
-
-padding-top: 25px;
-background-color: #fff;
--moz-box-shadow: 1px 4px 12px #b8b8b8;
--webkit-box-shadow: 1px 4px 12px #b8b8b8;
-box-shadow: 1px 4px 12px #b8b8b8;
-min-height: 500px;
-
-}
 
 
-.top {padding: 10px;
 
- height: 60px;
- 
-
-
+.top {padding: 10px; height: 60px;
 } 
 
 /*this still won't work?!*/
@@ -80,8 +62,6 @@ min-height: 500px;
 
 
 
-.opboxclear { background-color: #fff; padding: 0px;}
-
 .controlpannel {text-align: right; padding-right: 10px;   font-size: 25px;}
 
 header {  padding-bottom: 22px 0; }
@@ -108,4 +88,147 @@ h5 { font-size: 17px; }
 
 h6 { font-size: 14px; }
 
+
+
+
+/**
+ * Grid container
+ */
+#tiles {
+  list-style-type: none;
+  position: relative; /** Needed to ensure items are laid out relative to this container **/
+  margin-top: 20px;
+}
+
+/**
+ * Grid items
+ */
+#tiles li {
+  background: #dbdbdb;
+
+  display: none; /** Hide items initially to avoid a flicker effect **/
+  
+
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+          height:auto;
+          padding: 0px;
+          max-height:300px;
+          max-width: 300px;
+}
+
+#tiles li.inactive {
+  opacity: 0;
+}
+
+/**
+
+#tiles li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+**/
+
+#tiles .opboxspacer {
+background-color: #fff;
+padding-bottom: 0px;
+}
+
+#tiles .opboxspacerleft {
+
+
+display: inline-block;
+}
+#tiles .opboxspacerright {
+
+
+display: inline-block;
+float: right;
+}
+
+#tiles .bodytext {
+padding: 20px;
+}
+
+
+#filters {
+  list-style-type: none;
+  text-align: center;
+  height: 50px;
+  margin: 0 5% 0 5%;
+}
+
+#filters li {
+  font-size: 12px;
+  float: left;
+  padding: 6px 0 4px 0;
+  cursor: pointer;
+  margin: 0 1% 0 1%;
+  width: 8%;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+
+#filters li:hover {
+  background: #dedede;
+}
+
+#filters li.active {
+  background: #333333;
+  color: #ffffff;
+}
+
+/**
+ * Grid item text
+ */
+
+tiles li p {
+  color: #666;
+  font-size: 12px;
+}
+
+
+/**
+ * Some extra styles to randomize heights of grid items.
+ */
+#tiles ali:nth-child(3n) {
+  height: 175px;
+}
+
+
+#tiles ali:nth-child(4n-3) {
+  padding-bottom: 30px;
+}
+
+#tiles ali:nth-child(5n) {
+  height: 250px;
+}
+
+/** General page styling **/
+
+
+
+
+header h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 30px 0 3px 0;
+}
+
+header p {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+}
 

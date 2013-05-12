@@ -3,4 +3,9 @@ class Post < ActiveRecord::Base
 
   has_many :comments
 
+def self.search(search)
+  search_condition ="%" + search + "%"
+  find(:all, :conditions => ['tags LIKE ?', search_condition])
+end
+
 end
