@@ -2,14 +2,13 @@
 
 
   <div id="container">
-    <header>
-    </header>
+
     <div id="main" role="main">
 
       <!--
         These are our filter options. The "data-filter" classes are used to identify which
         grid items to show.
-        -->
+        
       <ol id="filters">
         <li data-filter="telecoms">Telecoms</li>
         <li data-filter="test">Test</li>
@@ -22,7 +21,7 @@
         <li data-filter="art">Art</li>
       </ol>
 
-
+-->
 
       <ul id="tiles">
         <!--
@@ -33,7 +32,7 @@
         <li class="<%=post.tags %> art">
           <div class="bodytext">
          <h4><%= post.contentSummary[0,10]%></h4>   
-            <p><%= post.contentSummary[0,200] %><b><%= link_to 'find out more', post %></b></p><br>
+            <p><%= post.contentSummary[0,150] %><b><%= link_to 'find out more', post %></b></p><br>
           </div>
           <div class="industrycolour" style="background-color:#347ec7;padding-top:5px">
             <!-- USE A CASE STATEMENT HERE TO SELECT COLOUR BY TAG-->
@@ -61,9 +60,7 @@
       </ul>
 
     </div>
-    <footer>
 
-    </footer>
   </div>
 
 
