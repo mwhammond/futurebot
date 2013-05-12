@@ -5,13 +5,20 @@
 
     <div id="main" role="main">
 
-      <div class="descriptor">
+      <div class="row">
+      <div class="large-8 small-12 columns descriptor">
         
-        <h2>Build things that solve real problems</h2>
+        <h1>Build things that people want!</h1>
         <h6>There are millions of opportunities beyond consumer apps, futurebot make them visible.</h6>
         <p>Until now it has been almost impossible to get visibility of the current challenges across industries outside of tech. Futurebot identifies industry experts talking about challenges and opportunities and summarises them here for entrepreneurs to get their teeth in to.
         </p>
+        
       </div>
+      <div class="large-4 columns rightpanel">  
+      <br>
+      <%=render :partial => 'search'%>
+      </div>
+    </div>
 
       <!--
         These are our filter options. The "data-filter" classes are used to identify which

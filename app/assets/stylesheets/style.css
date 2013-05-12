@@ -19,7 +19,9 @@ a:hover,a.hover { text-decoration: underline; }
  This is defined so the links can be onClicks but still look like links
 without doing javascriptVoid or linking to nothing*/
 
-.descriptor {padding-top: 100px; padding-bottom: 10px; max-width: 500px;}
+.descriptor {padding-top: 100px; padding-bottom: 10px;}
+
+.rightpanel {padding-top: 100px; padding-bottom: 10px;}
 
 .top {padding: 10px; height: 35px; text-align: center; vertical-align: middle;} 
 

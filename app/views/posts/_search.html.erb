@@ -1,4 +1,12 @@
-<%= form_tag :controller => 'posts', :action => 'search', :method => 'get' do %>
-<%= text_field_tag :search, params[:search], :id => 'search_field' %>
+
+<h5>Search</h5>
+<p>Search for fields (e.g. telecoms) or technologies (e.g. 'Big Data')</p>
+
+<%= form_tag posts_path, :method => 'get' do %>
+<p>
+<%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search", :name => nil %> 
-<% end %> 
+</p>
+
+<% end %>
+

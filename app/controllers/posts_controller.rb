@@ -3,13 +3,24 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
    # @posts = Post.all
+
+   if params[:search]
+    @posts = Post.find(:all, :conditions => ['contentSummary LIKE ? OR tags LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%"])
+  else
+    @posts = Post.find(:all)
+  end
+
+   if params[:topcs]
+    @posts = Post.find(:all, :conditions => ['tags LIKE ?', "%#{params[:search]}%"])
+  else
+    @posts = Post.find(:all)
+  end
+
  case params[:view]
   when 'top'
     @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
   when 'new'
     @posts = Post.where("score <= ?", 1).order("score DESC").limit(100)
-  else
-    @posts = Post.where("score >= ?", 1).order("score DESC").limit(20)
   end
 
     respond_to do |format|
