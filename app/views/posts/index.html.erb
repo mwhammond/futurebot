@@ -6,7 +6,7 @@
     <div id="main" role="main">
 
       <div class="row">
-      <div class="large-8 small-12 columns descriptor">
+      <div class="large-7 small-12 columns descriptor">
         
         <h1>Build things that people want!</h1>
         <h6>There are millions of opportunities beyond consumer apps, futurebot make them visible.</h6>
@@ -14,7 +14,7 @@
         </p>
         
       </div>
-      <div class="large-4 columns rightpanel">  
+      <div class="large-3 columns rightpanel">  
       <br>
       <%=render :partial => 'search'%>
       </div>
@@ -47,7 +47,8 @@
         <li class="<%=post.tags %> art">
           <div class="bodytext">
          <h4>Title</h4>   
-            <p><%= post.contentSummary[0,150] %><br><b><%= link_to 'find out more', post %></b></p><br>
+            <p><%= post.contentSummary[0,150] %><br><b><%= link_to 'find out more', post %></b></p>
+            <p>Found <i>today<i> at 12:52</p>
           </div>
           <div class="industrycolour" style="background-color:#347ec7;padding-top:5px">
             <!-- USE A CASE STATEMENT HERE TO SELECT COLOUR BY TAG-->

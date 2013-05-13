@@ -7,7 +7,7 @@ h6 {line-height: 20px}
 
 body
 {
-background-color: #e0e1e2; 
+background-color: #f1f2f3; 
 /*background-image:url('images/debut_light.png'); 
 background-repeat:repeat-y; */
 }
@@ -19,19 +19,43 @@ a:hover,a.hover { text-decoration: underline; }
  This is defined so the links can be onClicks but still look like links
 without doing javascriptVoid or linking to nothing*/
 
-.descriptor {padding-top: 100px; padding-bottom: 10px;}
+.descriptor {padding-bottom: 10px;}
 
-.rightpanel {padding-top: 100px; padding-bottom: 10px;}
+.rightpanel {padding-bottom: 10px;}
 
 .top {padding: 10px; height: 35px; text-align: center; vertical-align: middle;} 
 
 
   .top p {color: #fff;}
 
-  .top a:hover {
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
+.whitebox {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px;
+  border-color: #a5a5a5;
+  height: 1500px;
+}
+
+.descriptor {
+  padding-left: 40px;
+  padding-top: 30px;
+
+}
+
+
+
+
+.top a {
+  color: #fff;
+  &:visited {
+    color: #fff;
   }
+  &:hover {
+    color: #fff;
+  }
+}
+
+
 
 .topone { background-color: #e4382a;} 
 .toptwo { background-color: #e3418c;}
@@ -92,7 +116,7 @@ h6 { font-size: 14px; }
  * Grid items
  */
 #tiles li {
-  background: #dbdbdb;
+  
 
   display: none; /** Hide items initially to avoid a flicker effect **/
   
@@ -105,7 +129,8 @@ h6 { font-size: 14px; }
           padding: 0px;
           max-height:400px;
           max-width: 248px;
-          border: 1px;
+          border: 3px;
+          border-color: #ccc;
 }
 
 #tiles li.inactive {
@@ -126,6 +151,9 @@ h6 { font-size: 14px; }
 background-color: #fff;
 padding-bottom: 0px;
 padding-top: 10px;
+border-left: 1px;
+border-right: 1px;
+border-bottom: 1px;
 }
 
 #tiles .opboxspacerleft {
@@ -141,6 +169,16 @@ float: right;
 
 #tiles .bodytext {
 padding: 20px;
+}
+
+#tiles a {
+  color: #000;
+  &:visited {
+    color: #000;
+  }
+  &:hover {
+    color: #cdcdcd;
+  }
 }
 
 
