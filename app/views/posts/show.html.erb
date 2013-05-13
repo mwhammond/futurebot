@@ -1,32 +1,46 @@
-<p id="notice"><%= notice %></p>
 
 
+<div id="container">
 
-<div class="opbox">
+	<div id="main" role="main">
 
-  <%= link_to '<- Back to list', posts_path %>
+		<div class="row">
+			<div class="large-8 small-12 columns descriptor">
 
-<h4><%= @post.score %> <h4>
+				<div class="bodytext">
+					<h4>Title</h4>   
+					<p><%= @post.contentSummary %><br></p><br>
+					<p> <%= link_to "Read full article", @post.link %></p>
+				</div>
+				<div class="industrycolour" style="background-color:#347ec7;padding-top:5px">
+					<!-- USE A CASE STATEMENT HERE TO SELECT COLOUR BY TAG-->
+				</div>
+				<div class="opboxspacer">
 
-<p>
-  <%= @post.content %>
-</p>
+					<div class="opboxspacerleft">
+						<p> Interest: <%= @post.score %> </p>
+					</div>
+					<div class="opboxspacerright">
 
+<!-- up/down links -->
 
+					</div>
 
-<p>
-  <%= link_to "Read full article", @post.link %>
-</p>
+					
 
+					<h5>Comments</h5>
+					<%= render @post.comments %>
 
-<h5>Comments</h5>
-<%= render @post.comments %>
+					<%= render "comments/form" %>
 
-
-
-
-<%= render "comments/form" %>
-
-
-
+				</div> <!-- opboxspace-->
+			</div>
+		</div>
+	</div>
 </div>
+
+
+
+
+
+

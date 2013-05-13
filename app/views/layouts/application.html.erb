@@ -28,7 +28,7 @@
       <ul class="title-area">
         <!-- Title Area -->
         <li class="name">
-          <h1><%= link_to "futurebot", posts_path %></h1>
+          <h1><%= link_to "Futurebot", :method => "post", :action => 'index', :view => "top" %></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -72,18 +72,19 @@
 
 <div class="fixed" style="padding-top:40px;padding-bottom:40px">
 
-<div class="large-1 small-3 columns top topone"> <p>Energy</p> </div>
-<div class="large-1 small-3 columns top toptwo"> <p>Health</p> </div>
-<div class="large-1 small-3 columns top topthree"> <p>Retail</p></div>
-<div class="large-1 small-3 columns top topfour"> <p>Comms</p></div>
-<div class="large-1 small-3 columns top topfive"> <p>Transport</p></div>
-<div class="large-1 small-3 columns top topsix"> <p>Food</p></div>
-<div class="large-1 small-3 columns top topseven"> <p>Education</p></div>
-<div class="large-1 small-3 columns top topeight"> <p>Finance</p></div>
-<div class="large-1 small-3 columns top topnine"> <p>Materials</p></div>
-<div class="large-1 small-3 columns top topten"> <p>Utilities</p></div>
-<div class="large-1 small-3 columns top topeleven"> <p>Other</p></div>
-<div class="large-1 small-3 columns top toptwelve"> <p>Other</p></div>
+
+<div class="large-1 small-3 columns top topone"> <%= link_to "Energy", :method => "post", :action => 'index', :topics => "Energy" %> </div>
+<div class="large-1 small-3 columns top toptwo"> <%= link_to "Health", :method => "post", :action => 'index', :topics => "Health" %> </div>
+<div class="large-1 small-3 columns top topthree"> <%= link_to "Retail", :method => "post", :action => 'index', :topics => "Retail" %></div>
+<div class="large-1 small-3 columns top topfour"> <%= link_to "Comms", :method => "post", :action => 'index', :topics => "Comms" %></div>
+<div class="large-1 small-3 columns top topfive"> <%= link_to "Transport", :method => "post", :action => 'index', :topics => "Transport" %></div>
+<div class="large-1 small-3 columns top topsix"> <%= link_to "Food", :method => "post", :action => 'index', :topics => "Food" %></div>
+<div class="large-1 small-3 columns top topseven"> <%= link_to "Education", :method => "post", :action => 'index', :topics => "Education" %></div>
+<div class="large-1 small-3 columns top topeight"> <%= link_to "Finance", :method => "post", :action => 'index', :topics => "Finance" %></div>
+<div class="large-1 small-3 columns top topnine"> <%= link_to "Materials", :method => "post", :action => 'index', :topics => "Materials" %></div>
+<div class="large-1 small-3 columns top topten"> <%= link_to "Utilities", :method => "post", :action => 'index', :topics => "Utilities" %></div>
+<div class="large-1 small-3 columns top topeleven"> <%= link_to "Tech", :method => "post", :action => 'index', :topics => "Tech" %></div>
+<div class="large-1 small-3 columns top toptwelve"> <%= link_to "Media", :method => "post", :action => 'index', :topics => "Media" %></div>
 
 
 </div>

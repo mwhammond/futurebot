@@ -26,17 +26,9 @@ without doing javascriptVoid or linking to nothing*/
 .top {padding: 10px; height: 35px; text-align: center; vertical-align: middle;} 
 
 
-  .top a {
-    display: block;
-    background: #c8c8c8;
-    text-align: center;
-    
-  }
-
   .top p {color: #fff;}
 
   .top a:hover {
-    background: #f8f8f8;
     opacity:0.4;
     filter:alpha(opacity=40); /* For IE8 and earlier */
   }
