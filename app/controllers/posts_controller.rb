@@ -13,9 +13,9 @@ class PostsController < ApplicationController
    elsif params[:view]
      case params[:view]
       when 'top'
-        @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
+        @posts = Post.where("score >= ?", 3).order("score DESC").limit(15)
       when 'new'
-        @posts = Post.where("score <= ?", 1).order("score DESC").limit(100)
+        @posts = Post.where("score <= ?", 3).order("score DESC").limit(100)
       end
    else
     @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
