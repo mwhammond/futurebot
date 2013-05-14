@@ -1,0 +1,11 @@
+
+<h5>Mailing list</h5>
+<p>Sign up for monthly updates, no other rubbish</p>
+
+<%= form_tag posts_path, :method => 'get' do %>
+<p>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :name => nil %> 
+</p>
+
+<% end %>

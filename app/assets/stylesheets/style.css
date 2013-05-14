@@ -8,8 +8,8 @@ h6 {line-height: 20px}
 body
 {
 background-color: #f1f2f3; 
-/*background-image:url('images/debut_light.png'); 
-background-repeat:repeat-y; */
+background-image:url('knitting250px.png'); 
+/*background-repeat:repeat-y; */
 }
 
 
@@ -30,11 +30,33 @@ without doing javascriptVoid or linking to nothing*/
 
 .whitebox {
   background-color: #fff;
-  padding: 10px;
+  padding: 30px;
   border: 1px;
   border-color: #a5a5a5;
   height: 1500px;
 }
+
+.infobox{
+
+  padding: 30px;
+  background-color: #58abff;
+}
+
+.infobox a {
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+.infobox p {color: #fff;}
+.infobox h2 {color: #fff;}
+.infobox h6 {color: #fff;}
+
+
+
 
 .descriptor {
   padding-left: 40px;
@@ -102,85 +124,6 @@ h6 { font-size: 14px; }
 
 
 
-/**
- * Grid container
- */
-#tiles {
-  list-style-type: none;
-  position: relative; /** Needed to ensure items are laid out relative to this container **/
-  margin-top: 20px;
-
-}
-
-/**
- * Grid items
- */
-#tiles li {
-  
-
-  display: none; /** Hide items initially to avoid a flicker effect **/
-  
-
-  -webkit-transition: all 0.3s ease-out;
-     -moz-transition: all 0.3s ease-out;
-       -o-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;
-          height:auto;
-          padding: 0px;
-          max-height:400px;
-          max-width: 248px;
-          border: 3px;
-          border-color: #ccc;
-}
-
-#tiles li.inactive {
-  opacity: 0;
-}
-
-/**
-
-#tiles li img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-**/
-
-#tiles .opboxspacer {
-background-color: #fff;
-padding-bottom: 0px;
-padding-top: 10px;
-border-left: 1px;
-border-right: 1px;
-border-bottom: 1px;
-}
-
-#tiles .opboxspacerleft {
-display: inline-block;
-padding-left: 10px;
-}
-
-#tiles .opboxspacerright {
-padding-right: 10px;
-display: inline-block;
-float: right;
-}
-
-#tiles .bodytext {
-padding: 20px;
-}
-
-#tiles a {
-  color: #000;
-  &:visited {
-    color: #000;
-  }
-  &:hover {
-    color: #cdcdcd;
-  }
-}
-
 
 #filters {
   list-style-type: none;
@@ -214,33 +157,7 @@ padding: 20px;
   color: #ffffff;
 }
 
-/**
- * Grid item text
- */
 
-tiles li p {
-  color: #666;
-  font-size: 12px;
-}
-
-
-/**
- * Some extra styles to randomize heights of grid items.
- */
-#tiles ali:nth-child(3n) {
-  height: 175px;
-}
-
-
-#tiles ali:nth-child(4n-3) {
-  padding-bottom: 30px;
-}
-
-#tiles ali:nth-child(5n) {
-  height: 250px;
-}
-
-/** General page styling **/
 
 
 
