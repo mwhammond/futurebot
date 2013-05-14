@@ -1,5 +1,8 @@
 Futurebot::Application.routes.draw do
 
+  resources :links
+
+
   resources :posts do
     resources :comments
   end
