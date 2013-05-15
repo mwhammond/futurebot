@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514225246) do
+ActiveRecord::Schema.define(:version => 20130515210750) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(:version => 20130514225246) do
     t.string   "title"
     t.string   "url"
     t.string   "tags"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.date     "lastchecked"
   end
 
   create_table "posts", :force => true do |t|
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20130514225246) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "tags"
+    t.date     "datefound"
   end
 
   create_table "tags", :force => true do |t|

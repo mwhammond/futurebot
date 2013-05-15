@@ -65,7 +65,7 @@ def find_keywords(feedEntryUrl, tags)
 		result = paraString[dotBefore+2, position+CharacterFollow]+"..."
 
 		puts paraString
-		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl, :tags => tags) 
+		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl, :tags => tags, :datefound => DateTime.now) 
 	
 	end #each
 

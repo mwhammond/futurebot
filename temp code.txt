@@ -1,27 +1,2 @@
-The form based solution for updating values
-
-    <%= form_for(post) do |f| %>
-
-    <%= f.hidden_field :score, :value => post.score+1 %>
-
-    <%= f.submit "Upvote", :type => :image, :src => "/images/arrow-up.png" %>
-
-    <% end %>
-
-
-    <%= form_for(post) do |f| %>
-
-    <%= f.hidden_field :score, :value => post.score-1 %>
-
-    <%= f.submit "downvote", :type => :image, :src => "/images/arrow-down.png" %>
-
-    <% end %>
-
-
-
-The proper form of restful link
-
-
-<%= link_to "up: ", :action => 'upVote', :id => post.id %>
-with route
-match ':posts/:id/:upVote', :controller => 'posts', :action => 'upVote'
+set RAILS_ENV=production
+bundle exec rake assets:precompile

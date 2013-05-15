@@ -27,8 +27,8 @@ loader.gif: loader-f63bd02ed8dd66b805c921125ed5b604.gif
 loader/index.gif: loader-f63bd02ed8dd66b805c921125ed5b604.gif
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-354ce03f8e135ae8e337017b093df312.js
-application/index.js: application-354ce03f8e135ae8e337017b093df312.js
+application.js: application-5b16def481f2b32ef2e5c53430c86e27.js
+application/index.js: application-5b16def481f2b32ef2e5c53430c86e27.js
 application.css: application-f76592b083f0f9b9cca9a9a7d779b1a7.css
 application/index.css: application-f76592b083f0f9b9cca9a9a7d779b1a7.css
 vendor/custom.modernizr.js: vendor/custom.modernizr-a6a44595af662b8609659982df558920.js
