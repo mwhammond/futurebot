@@ -49,7 +49,7 @@ def find_keywords(feedEntryUrl, tags)
 	# CHANGE TO DYNAMIC KEYWORD! 
 	# AND FIX PLURALS! - put them all in with an 'or'?
 
-	positions = paraString.enum_for(:scan, /\bdata\b/).map { Regexp.last_match.begin(0) }
+	positions = paraString.enum_for(:scan, /\bchallenge\b/).map { Regexp.last_match.begin(0) }
 	dots = paraString.enum_for(:scan, /[\.\?\!]/).map { Regexp.last_match.begin(0) }
 
 	# find the end of a sentence immediatly before a keyword
