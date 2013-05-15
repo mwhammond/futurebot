@@ -1,5 +1,8 @@
 Futurebot::Application.routes.draw do
 
+  resources :keywords
+
+
   resources :links
 
 

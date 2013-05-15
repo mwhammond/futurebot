@@ -13,8 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require jquery.wookmark
 //= require_tree .
 
 $(document).foundation();
+
+$(document).ready(function() {
+	$('#hidden-content').hide();
+	$('#hidden-content-reveal').click(function() {
+	$('#hidden-content').slideToggle(400);
+	return false;
+	});
+});
 

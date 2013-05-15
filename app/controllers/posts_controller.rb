@@ -13,9 +13,9 @@ class PostsController < ApplicationController
    elsif params[:view]
      case params[:view]
       when 'top'
-        @posts = Post.where("score >= ?", 3).order("score DESC").limit(15)
+        @posts = Post.where("score >= ?", 2).order("score DESC").limit(15)
       when 'new'
-        @posts = Post.where("score <= ?", 3).order("score DESC").limit(100)
+        @posts = Post.where("score = ?", 1).order("score DESC").limit(100)
       end
    else
     @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
@@ -72,9 +72,18 @@ class PostsController < ApplicationController
         end
       end
           respond_to do |format|
-     #  @post.update_attributes(params[:post])
-        format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
+            case params[:view] #THIS IS STILL BROKEN - FIX IT!
+            when 'new'
+                render :template => 'posts#view=new'
+                format.json { head :no_content }
+            when 'top'
+                format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
+                format.json { head :no_content }
+            else
+                format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
+                format.json { head :no_content }
+            end
+
       end 
   end
 
