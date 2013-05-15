@@ -2,36 +2,42 @@
 
 CharacterFollow = 30;
 
-RetailLinks = ["http://www.telecoms.com/feed/"]
-Sector = ["telecoms"]
-
-
 
 
 
 	### get latest feeds and store in ##############
 
-	def update_from_feed(feed_url)
+	def update_from_feed()
+		# ADD A LAST CHECKED TIME FIELD!
+
+	@links = Link.all # change to select only new ones in the controller
+
+ 	@links.each do |link| 
+
+	feed = Feedzirra::Feed.fetch_and_parse(link.url)
+
+ 	
+
 		puts "pulling feeds"
-		puts feed_url
+		puts link.url
 		# add something to handle if it doesn't work
 		# CHECK FOR AND REMOVE SPECIAL CHARACTERS
 
-		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-		puts feed.title
 		# feed.last_modified - if it's been modified since last time
 		feed.entries.each do |entry|
 			# if the post occured after it was last checked
 			# check that it's a decent length
-			find_keywords(entry.url)
+			find_keywords(entry.url, link.tags)
 			puts entry.url	
+			end
+
 		end
 end
 
 
 ### scrape page and use regex to extract ########
 
-def find_keywords(feedEntryUrl)
+def find_keywords(feedEntryUrl, tags)
 	puts "extracting keywords"
 	doc = Nokogiri::HTML(open(feedEntryUrl))
 	# LOAD THE DICTIONARY OF KEYWORDS
@@ -59,13 +65,11 @@ def find_keywords(feedEntryUrl)
 		result = paraString[dotBefore+2, position+CharacterFollow]+"..."
 
 		puts paraString
-		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl, :tags => "telecoms") 
+		Post.create!(:title => "bam",:content => paraString,:contentSummary => result,:score => 1, :image => "radio.jpg",:link => feedEntryUrl, :tags => tags) 
 	
 	end #each
 
 	end #if a few sentences
-
-
 
 		
 	end
@@ -73,9 +77,7 @@ def find_keywords(feedEntryUrl)
 end
 
 
+update_from_feed
 
-RetailLinks.each do |link|
-	update_from_feed(link)
-end
 
 #end #class
