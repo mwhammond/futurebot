@@ -22,6 +22,7 @@
 
 <body>
 
+
   <div class="fixed">
     <nav class="top-bar">
 
@@ -89,6 +90,13 @@
 
 </div>
 
+  <div id="wrap"> <!-- this is here for the footer -->
+
+  <div id="main"> <!-- this is here for the footer -->
+
+
+
+
 <!-- TOP INFO -->
 
 <div class="row" style="padding-top:120px">
@@ -98,7 +106,10 @@
         <h2>Build things that people want!</h2>
         <h6>There are millions of opportunities beyond consumer apps, futurebot make them visible.</h6>
         <a href="#" title="" id="hidden-content-reveal">Find out more &raquo;</a>
-        <div id="hidden-content"><p><br>Until now it has been almost impossible to get visibility of the current challenges across industries outside of tech. Futurebot identifies industry experts talking about challenges and opportunities and summarises them here for entrepreneurs to get their teeth in to.<p></div>
+        <div id="hidden-content"><p><br>Until now it has been almost impossible to get visibility of the current challenges across industries outside of tech. Futurebot is constantly searching for industry experts talking about challenges and opportunities and summarises them here for entrepreneurs to get their teeth in to.<p>
+    
+        <p>Futurebot is only 2 weeks old but there's massive improvements on the way including machine learning to seek out the best opportunities. Find out more about the pipeline and how to get involved <i><a href="/static/pipeline">here</a></i>.</p>
+        </div>
           
   </div>
 
@@ -106,7 +117,24 @@
 
     <h6><%= link_to "Newest opportunities", :method => "post", :action => 'index', :view => "new" %><h6>
     <h6><%= link_to "Highest rated", :method => "post", :action => 'index', :view => "top" %><h6>
-    <h6><%= link_to "Most discussed", :method => "post", :action => 'index', :view => "top" %><h6>
+ 
+
+<div style="border-top: 1px solid; width: 100%; margin-top:10px; padding-bottom:10px; border-color:#ccc"></div> <!-- deviding line -->
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<div id="mc_embed_signup">
+<form action="http://herokuapp.us7.list-manage.com/subscribe/post?u=61e831eb776dbcc55002d4a1a&amp;id=89e21317b8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <p>Find out more as futurebot develops</p>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+
 
   </div>
 
@@ -121,6 +149,22 @@
 
 </div>
 
+
+  </div> <!-- wrap for footer -->
+
+</div> <!-- main for footer -->
+<br>
+<br>
+<div id="footer">
+  <div class=left>
+    <p>
+      <b>On the blog</b><br><br>
+      The key challenges in the retail industry<br>
+      10 areas that could really benefit from big data<br>
+      Logistics: ripe for disruption<br>
+    </p>
+  </div>
+</div>
 
 
 </body>

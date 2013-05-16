@@ -52,7 +52,7 @@
 
         <h4>Title</h4>   
     <p><%= post.contentSummary %><br></p>           
-     <a href="#" title="" id="hidden-content-reveal">Find out more &raquo;</a>
+     <a href="<%= post.link %>" target="new">Find out more &raquo;</a>
      <!--   <div id="hidden-content"><p><br>normal content<p></div> -->
 
 
@@ -63,7 +63,11 @@
 </div> <!-- row -->
 
 
-
 <%end%>
+<br>
+<div style="text-align:right">
+<p><%= paginate @posts %></p>
+</div>
+<br>
 
  

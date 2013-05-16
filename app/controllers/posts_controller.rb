@@ -5,20 +5,22 @@ class PostsController < ApplicationController
    # @posts = Post.all
 
    if params[:search]
-    @posts = Post.find(:all, :conditions => ['contentSummary LIKE ? OR tags LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%"])
-   
+    outArray = Post.find(:all, :conditions => ['contentSummary LIKE ? OR tags LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%"])
+    @posts = Kaminari.paginate_array(outArray).page(params[:page])
+
    elsif params[:topics]
-    @posts = Post.find(:all, :conditions => ['tags LIKE ?', "%#{params[:topics]}%"])
-   
+    outArray = Post.find(:all, :conditions => ['tags LIKE ?', "%#{params[:topics]}%"])
+    @posts = Kaminari.paginate_array(outArray).page(params[:page])
+
    elsif params[:view]
      case params[:view]
       when 'top'
-        @posts = Post.where("score >= ?", 2).order("score DESC").limit(15)
+        @posts = Post.where("score >= ?", 2).order("score DESC").page(params[:page]).per(10)
       when 'new'
-        @posts = Post.where("score = ?", 1).order("score DESC").limit(100)
+        @posts = Post.where("score = ?", 1).order("score DESC").page(params[:page]).per(10)
       end
    else
-    @posts = Post.where("score >= ?", 3).order("score DESC").limit(10)
+    @posts = Post.where("score >= ?", 3).order("score DESC").page(params[:page]).per(10)
    end
 
     respond_to do |format|
