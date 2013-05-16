@@ -1,5 +1,9 @@
 Futurebot::Application.routes.draw do
 
+  get "static/pipeline"
+
+  resources :static
+
   resources :keywords
 
 
