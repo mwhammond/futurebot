@@ -16,7 +16,8 @@ class PostsController < ApplicationController
      case params[:view]
       when 'top'
         outArray = Post.where("score >= ?", 2).order("score DESC")
-        @posts = outArray.page(params[:page]).per(20)
+    #    @posts = outArray.page(params[:page]).per(20)
+     @posts = Kaminari.paginate_array(outArray).page(params[:page])
 
       when 'new'
         outArray = Post.where("score = ?", 1).order("score DESC")
