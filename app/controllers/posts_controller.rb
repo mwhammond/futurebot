@@ -15,12 +15,15 @@ class PostsController < ApplicationController
    elsif params[:view]
      case params[:view]
       when 'top'
-        @posts = Post.where("score >= ?", 2).order("score DESC").page(params[:page]).per(10)
+        outArray = Post.where("score >= ?", 2).order("score DESC")
+        @posts = Kaminari.paginate_array(outArray).page(params[:page])
       when 'new'
-        @posts = Post.where("score = ?", 1).order("score DESC").page(params[:page]).per(10)
+        @posts = Post.where("score = ?", 1).order("score DESC")
+        outArray = Kaminari.paginate_array(outArray).page(params[:page])
       end
    else
-    @posts = Post.where("score >= ?", 3).order("score DESC").page(params[:page]).per(10)
+    @posts = Post.where("score >= ?", 3).order("score DESC")
+    outArray = Kaminari.paginate_array(outArray).page(params[:page])
    end
 
     respond_to do |format|
