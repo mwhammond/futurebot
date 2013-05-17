@@ -25,7 +25,8 @@ class PostsController < ApplicationController
 
       end
    else
-    @posts = Post.where("score >= ?", 3).order("score DESC")
+    outArray = Post.where("score >= ?", 3).order("score DESC")
+    @posts = outArray.page(params[:page]).per(20)
 
    end
 
