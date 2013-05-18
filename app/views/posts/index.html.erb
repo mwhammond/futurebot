@@ -45,7 +45,7 @@
 <br>
 <br>
 <%=post.datefound %>
-<%= post.tags %>
+
 
 
 
@@ -59,9 +59,13 @@
   <div class="small-9 large-9 columns">
 
         <h4>Title</h4>   
-    <p><%= post.contentSummary %><br></p>           
-     <a href="<%= post.link %>" target="new">Find out more &raquo;</a>
+    <p><%= post.contentSummary %>          
+     <b><a href="<%= post.link %>" target="new"> Expand</a></b><p>
      <!--   <div id="hidden-content"><p><br>normal content<p></div> -->
+     Tags:
+    <% (post.tags.split(' ')).each do |item| %>
+     <span class="radius secondary label"><%= item %></span>
+    <% end %>
 
 
 <div style="border-top: 1px solid; width: 100%; margin-top:30px; padding-bottom:10px; border-color:#ccc"></div> <!-- deviding line -->
