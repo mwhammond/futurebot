@@ -19,73 +19,70 @@
         <li data-filter="art">Art</li>
       </ol>
 
--->
+    -->
 
 
-<% @posts.each do |post| %>
+    <% @posts.each do |post| %>
 
-<div class="row" id="postbox">
+    <div class="row" id="postbox">
 
-  <div class="small-3 large-3 columns">
+      <div class="small-3 large-3 columns">
 
-<div id="score">
-  <h2> <%= post.score %> </h2>
-</div>
+        <div id="score">
+          <h2> <%= post.score %> </h2>
+        </div>
 
-  <div id="control">
-
-
-    <%= link_to image_tag("/images/arrow-up.png"), {:method => "post", :action => 'edit', :vote => "up", :id => post.id}, :remote => true , :class => 'changescore'%>
-    <%= link_to image_tag("/images/arrow-down.png"), {:method => "post", :action => 'edit', :vote => "down", :id => post.id}, :remote => true, :class => 'changescore' %>
-    <%= link_to image_tag("/images/remove.png"), {:method => "post", :action => 'edit', :vote => "junk", :id => post.id}, :class => "delete_post", :remote => true %>
+        <div id="control">
 
 
-
-
-<br>
-<br>
-<%=post.datefound %>
+          <%= link_to image_tag("/images/arrow-up.png"), {:method => "post", :action => 'edit', :vote => "up", :id => post.id}, :remote => true , :class => 'changescore'%>
+          <%= link_to image_tag("/images/arrow-down.png"), {:method => "post", :action => 'edit', :vote => "down", :id => post.id}, :remote => true, :class => 'changescore' %>
+          <%= link_to image_tag("/images/remove.png"), {:method => "post", :action => 'edit', :vote => "junk", :id => post.id}, :class => "delete_post", :remote => true %>
 
 
 
 
+          <br>
+          <br>
+          <%=post.datefound %>
 
-  </div>
 
 
-  </div> <!-- left box-->
-  
 
-  <div class="small-9 large-9 columns">
+
+        </div>
+
+
+      </div> <!-- left box-->
+
+
+      <div class="small-9 large-9 columns">
 
         <h4>Title</h4>   
-    <p><%= post.contentSummary %>          
-     <b><a href="<%= post.link %>" target="new"> Expand</a></b><p>
-     <!--   <div id="hidden-content"><p><br>normal content<p></div> -->
-     Tags:
-    <% (post.tags.split(' ')).each do |item| %>
-     <span class="radius secondary label"><%= item %></span>
-    <% end %>
+        <div id="summary">
+          <p><%= post.contentSummary %>
+          <b><a href="#" class="full-content-reveal"> Expand</a></b><p> 
+          </div>
+
+          <div id="full-content"><p><br><%= post.content %><p></div>
+
+          Tags:
+          <% (post.tags.split(' ')).each do |item| %>
+          <span class="radius secondary label"><%= item %></span>
+          <% end %>
 
 
-<div style="border-top: 1px solid; width: 100%; margin-top:30px; padding-bottom:10px; border-color:#ccc"></div> <!-- deviding line -->
+          <div style="border-top: 1px solid; width: 100%; margin-top:30px; padding-bottom:10px; border-color:#ccc"></div> <!-- deviding line -->
 
-  </div> <!-- right box-->
+        </div> <!-- right box-->
 
-</div> <!-- row -->
-
-
+      </div> <!-- row -->
 
 
-
-
-
-
-<%end%>
-<br>
-<div style="text-align:right">
-<p><%= paginate @posts %></p>
-</div>
-<br>
-
+      <%end%>
+      <br>
+      <div style="text-align:right">
+        <p><%= paginate @posts %></p>
+      </div>
+      <br>
 

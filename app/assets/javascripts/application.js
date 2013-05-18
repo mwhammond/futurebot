@@ -41,6 +41,10 @@ $('a.changescore').bind('ajax:success', function(evt, data, status, xhr) {
 });
 
 
+$('.full-content-reveal').click(function() {
+$(this).closest('#postbox').find("#full-content").slideToggle(100);
+	return false;
+});
 
 });
 
