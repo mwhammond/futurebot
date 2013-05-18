@@ -24,24 +24,32 @@
 
 <% @posts.each do |post| %>
 
-<div class="row">
+<div class="row" id="postbox">
 
   <div class="small-3 large-3 columns">
 
+<div id="score">
+  <h2> <%= post.score %> </h2>
+</div>
 
-  <h2 style="color:#56aed4"> <%= post.score %> </h2>
-
-  <div>
+  <div id="control">
 
 
-    <%= link_to image_tag("/images/arrow-up.png"), :method => "post", :action => 'edit', :vote => "up", :id => post.id%>
-    <!-- CALL THE REARANGING METHODS AND STOP IT REFRESHING! -->
-    <%= link_to image_tag("/images/arrow-down.png"), :method => "post", :action => 'edit', :vote => "down", :id => post.id%>
-    <%= link_to image_tag("/images/remove.png"), :method => "post", :action => 'edit', :vote => "junk", :id => post.id%>
+    <%= link_to image_tag("/images/arrow-up.png"), {:method => "post", :action => 'edit', :vote => "up", :id => post.id}, :remote => true , :class => 'changescore'%>
+    <%= link_to image_tag("/images/arrow-down.png"), {:method => "post", :action => 'edit', :vote => "down", :id => post.id}, :remote => true, :class => 'changescore' %>
+    <%= link_to image_tag("/images/remove.png"), {:method => "post", :action => 'edit', :vote => "junk", :id => post.id}, :class => "delete_post", :remote => true %>
+
+
+
 
 <br>
 <br>
-<%=post.datefound%>
+<%=post.datefound %>
+<%= post.tags %>
+
+
+
+
   </div>
 
 
@@ -63,6 +71,12 @@
 </div> <!-- row -->
 
 
+
+
+
+
+
+
 <%end%>
 <br>
 <div style="text-align:right">
@@ -70,4 +84,4 @@
 </div>
 <br>
 
- 
+

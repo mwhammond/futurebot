@@ -69,31 +69,26 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-      @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     if params[:vote]
         case params[:vote]
         when 'junk'
           @post.update_attribute(:score, 0)
+          respond_to do | format |  
+            format.json { render :json => @post}
+          end
         when 'up'
           @post.increment!(:score)
+            respond_to do | format |  
+              format.json { render :json => @post}
+            end
         when 'down'
           @post.decrement!(:score)
+            respond_to do | format |  
+              format.json { render :json => @post} 
+            end
         end
       end
-          respond_to do |format|
-            case params[:view] #THIS IS STILL BROKEN - FIX IT!
-            when 'new'
-                render :template => 'posts#view=new'
-                format.json { head :no_content }
-            when 'top'
-                format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
-                format.json { head :no_content }
-            else
-                format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
-                format.json { head :no_content }
-            end
-
-      end 
   end
 
   # POST /posts

@@ -15,13 +15,40 @@
 //= require foundation
 //= require_tree .
 
+jQuery.ajaxSetup({
+	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
 $(document).foundation();
 
 $(document).ready(function() {
-	$('#hidden-content').hide();
-	$('#hidden-content-reveal').click(function() {
-	$('#hidden-content').slideToggle(400);
+
+
+
+$('#hidden-content').hide();
+$('#hidden-content-reveal').click(function() {
+$('#hidden-content').slideToggle(400);
 	return false;
-	});
 });
+
+
+$('a.delete_post').bind('ajax:success', function() {      
+    $(this).closest("#postbox").fadeOut();  
+});
+
+$('a.changescore').bind('ajax:success', function(evt, data, status, xhr) {  
+    $(this).closest("#postbox").find("#score h2").html(data.score).fadeIn(); 
+});
+
+
+
+});
+
+
+
+
+
+
+
+
 

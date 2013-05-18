@@ -115,26 +115,14 @@
 
   <div class="small-0 large-3 large-offset-1 columns rightoptions" style="background-color:#fff">
 
-    <h6><%= link_to "Newest opportunities", :method => "post", :action => 'index', :view => "new" %><h6>
     <h6><%= link_to "Highest rated", :method => "post", :action => 'index', :view => "top" %><h6>
+    <h6><%= link_to "Newest opportunities", :method => "post", :action => 'index', :view => "new" %><h6>
+    
  
 
 <div style="border-top: 1px solid; width: 100%; margin-top:10px; padding-bottom:10px; border-color:#ccc"></div> <!-- deviding line -->
 
-<!-- Begin MailChimp Signup Form -->
-<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-
-<div id="mc_embed_signup">
-<form action="http://herokuapp.us7.list-manage.com/subscribe/post?u=61e831eb776dbcc55002d4a1a&amp;id=89e21317b8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <p>Find out more as futurebot develops</p>
-  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-</form>
-</div>
-
-<!--End mc_embed_signup-->
-
-
+<%=render :partial => 'posts/search'%>
 
   </div>
 
@@ -145,7 +133,23 @@
 <div class="row" style="padding-top:30px">
 
   <div class="small-12 large-8 columns whitebox"><%= yield %></div>
-  <div class="small-0 large-3 large-offset-1 columns" style="background-color:#fff"><%=render :partial => 'posts/search'%></div>
+  <div class="small-0 large-3 large-offset-1 columns" style="background-color:#fff">
+
+<!-- Begin MailChimp Signup Form -->
+
+
+<div id="mc_embed_signup">
+<form action="http://herokuapp.us7.list-manage.com/subscribe/post?u=61e831eb776dbcc55002d4a1a&amp;id=89e21317b8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <h6>Find out more as futurebot develops</h6>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+  <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+
+  </div>
 
 </div>
 
