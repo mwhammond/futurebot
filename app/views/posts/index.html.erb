@@ -64,11 +64,11 @@
           <b><a href="#" class="full-content-reveal"> Expand</a></b><p> 
           </div>
 
-          <div id="full-content"><p><br><%= post.content %><p></div>
+          <div id="full-content"><p><br><%= post.content %></p><p><a href="<%=post.link%>" target="new">Read original article</a></p></div>
 
           Tags:
           <% (post.tags.split(' ')).each do |item| %>
-          <span class="radius secondary label"><%= item %></span>
+          <span class="radius secondary label"><%= link_to item, :method => "post", :action => 'index', :search => item %></span>
           <% end %>
 
 

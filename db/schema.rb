@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515230246) do
+ActiveRecord::Schema.define(:version => 20130519115123) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(:version => 20130515230246) do
     t.text     "contentSummary"
     t.integer  "score"
     t.string   "image"
-    t.string   "link"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.text     "link",           :limit => 255
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "tags"
     t.date     "datefound"
     t.string   "keyword"
