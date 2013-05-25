@@ -27,8 +27,14 @@ CharacterFollow = 30;
 		feed.entries.each do |entry|
 			# if the post occured after it was last checked
 			# check that it's a decent length
+			if entry.url =~ /^#{URI::regexp}$/
+
 			find_keywords(entry.url, link.tags)
 			puts entry.url	
+			else
+					puts "bad url"
+					puts entry.url	
+			end
 			end
 
 		end

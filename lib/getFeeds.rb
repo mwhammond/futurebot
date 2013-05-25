@@ -2,6 +2,7 @@ class Getfeeds
 
 	require 'nokogiri'
 	require 'open-uri'
+	require 'uri'
 
 
 
